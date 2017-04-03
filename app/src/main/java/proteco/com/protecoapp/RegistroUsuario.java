@@ -46,14 +46,13 @@ public class RegistroUsuario extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(getApplicationContext(),task.getResult().toString(),Toast.LENGTH_SHORT).show();
                         //checking if success
                         if(task.isSuccessful()){
                             //display some message here
-                            Toast.makeText(getApplicationContext(),edtUsuarioRegistro.getText().toString()+ "->"+ edtPasswdRegistro.getText().toString(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Usuario registrado exitosamente",Toast.LENGTH_SHORT).show();
                         }else{
                             //display some message here
-                            Toast.makeText(getApplicationContext(),edtUsuarioRegistro.getText().toString()+ " ERROR "+ edtPasswdRegistro.getText().toString(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"El usuario ya existe",Toast.LENGTH_SHORT).show();
                         }
 
                     }
